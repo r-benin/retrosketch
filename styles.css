@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body {
     width: 100vw;
     height: 100vh;
@@ -6,12 +8,17 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #e0e4e4;
+    background-color: #f5f5f7;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-    color: #616366;
-    margin-top: 0.5rem;
+    color: black;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 3em;
+    font-family: 'VT323', sans-serif;
 }
 
 #div-container {
@@ -22,47 +29,145 @@ h1 {
     justify-content: center;
 }
 
-#drawing-area {
-    padding: 1rem;
-    background-color: #616366;
-    border-radius: 5px;
-}
-
 #gridContainer {
     height: 500px;
     width: 500px;
     display: grid;
     user-select: none;
     background-color: white;
+    border: solid 2px rgba(0, 0, 0, 0.5);
 }
 
 #left-controls {
-    height: 95%;
+    height: 100%;
     width: 150px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#left-controls > div {
+    margin: 10px 10px 0px 0px;
+    padding: 0px;
+}
+
+#button-container {
+    width: 2.5em;
+    height: 6em;
+    border-radius: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+}
+
+#button-container img {
+    width: 1.5em;
+    z-index: 1;
+    transition: all linear 0.2s;
+    user-select: none;
+    margin: 5px;
+    &.invertColor {
+        filter: invert(100%);
+    }
+}
+
+#button-container img:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+#selected-button {
+    width: 85%;
+    height: 50%;
+    background-color: black;
+    border-radius: 100px;
+    transition: all linear 0.2s;
+    align-self: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    margin-top: 10%;
+
+    &.switchSelected {
+        transform: translateY(85%);
+    }
+
+}
+
+#colors-container {
+    width: 2.5em;
+    height: 350px;
+    background-color: white;
+    border-radius: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-img {
-    width: 60px;
-    
+.color {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    margin: 0.5em;
 }
 
-img:hover {
+.color:hover {
     cursor: pointer;
-
+    scale: 1.1;
 }
-
-
 
 #right-controls {
     height: 100%;
     width: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-start;
-    left: 1rem;
+    justify-content: flex-end;
 }
 
+#right-controls img {
+    width: 1.5em;
+    margin-left: 10px;
+    transition: 0.2s all linear;
+}
+
+#right-controls img:hover {
+    cursor: pointer;
+    scale: 1.1;
+    filter: invert(13%) sepia(89%) saturate(7451%) hue-rotate(0deg) brightness(98%) contrast(111%);
+}
+
+#slider-container {
+    margin: 10px 0px 0px 0px;
+}
+
+#gridSize {
+    margin: 5px;
+}
+
+.github-footer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    margin: 0px 0px 10px 10px;
+}
+
+.github-footer img{
+    width: 1.5em;
+    margin-right: 5px;
+}
+
+.github-link {
+    color: black;
+}

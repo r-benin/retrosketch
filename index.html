@@ -5,28 +5,30 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body onmouseup="stopDrawing()">
-        <h1>etch-a-sketch</h1>
+        <h1>Retrosketch</h1>
         <div id="div-container">
             <div id="left-controls">
-                <div id="paintbrush">
-                    <img src="img/paintbrush.png" onclick="switchMode('paint')">
+                <div id="button-container">
+                    <div id="selected-button"></div>
+                    <img src="img/paint.png" onclick="switchMode('paint')" id="paint" draggable="false">
+                    <img src="img/eraser.png" onclick="switchMode('eraser')" id="eraser" draggable="false">
                 </div>
-                <div id="eraser">
-                    <img src="img/eraser.png" onclick="switchMode('eraser')">
+                <div id="colors-container">
                 </div>
             </div>
-            <div id="drawing-area">
-                <div id="gridContainer"></div>
-            </div>
+            <div id="gridContainer"></div>
             <div id="right-controls">
                 <div>
-                    <img src="img/trashbin.png" onclick="clearDrawing()">
+                    <img src="img/trash.png" onclick="clearDrawing()" draggable="false">
                 </div>
             </div>
         </div>
         <div id="slider-container"> 
             <input type="range" min="10" max="100" value="50" id="rangeSlider" class="slider" onchange="changeValue()">
         </div>
-       
+        <p id="gridSize"></p>
+        <div class="github-footer">
+            <img src="img/github.png" draggable="false">made by&nbsp<a class="github-link" href="https://github.com/r-benin">r-benin</a>
+        </div>
     </body>
 </html>
